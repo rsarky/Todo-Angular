@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { LocalStorageService } from './services/local-storage.service'
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { AppComponent } from './app.component';
     FormsModule
   ],
   schemas:[NO_ERRORS_SCHEMA],
-  providers: [],
+  providers: [LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

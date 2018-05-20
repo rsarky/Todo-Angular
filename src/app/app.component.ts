@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Todo } from './Todo'
+import { Todo } from './Todo';
+import { LocalStorageService } from './services/local-storage.service'
 
 @Component({
   selector: 'app-root',
@@ -10,27 +11,25 @@ export class AppComponent {
   todos: Todo[] = [];
   details: string;
   todo: Todo;
+  todoStore: LocalStorageService;
+
+  constructor(todoStore: LocalStorageService) {
+    this.todoStore = todoStore;
+    this.todos = this.todoStore.todos;
+
+  }
 
   addTodo() {
-    let newTodo = {
-      details: this.details,
-      isComplete: false
-    }
+    let newTodo = new Todo(this.details);
+    this.todoStore.addTodo(newTodo);    
     this.details="";
-    this.todos.push(newTodo)
-    console.log(this.todos)
   }
 
   toggleTodo(todo: Todo) {
-    this.todos[this.todos.indexOf(todo)].isComplete = !this.todos[this.todos.indexOf(todo)].isComplete;
-  }
-
-  removeCompleted() {
-    this.todos = this.todos.filter((todo) => !todo.isComplete);
-    console.log(this.todos)
+    this.todoStore.toggleTodo(todo);
   }
 
   deleteTodo(todo) {
-    this.todos.splice(this.todos.indexOf(todo));
+    this.todoStore.deleteTodo(todo);
   }
 }
