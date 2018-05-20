@@ -10,7 +10,7 @@
     <li class="list-group-item" *ngFor="let todo of todos" [ngStyle]="{'text-decoration': todo.isComplete ? 'line-through' : 'none'}"
       [class.list-group-item-success]="todo.isComplete">
       {{ todo.details }}
-      <i class="fa fa-trash fa-lg float-right ml-3" (click)="deleteTodo(todo)"></i>
+      <i class="fa fa-trash fa-lg float-right ml-3" (click)="deleteTodo(todo)"  mdbTooltip="Remove Todo" placement="right"></i>
       <input class="float-right mr-2 mt-1" type="checkbox" (click)="toggleTodo(todo)">
     </li>
   </ul>
