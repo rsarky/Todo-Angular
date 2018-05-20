@@ -11,7 +11,7 @@
       [class.list-group-item-success]="todo.isComplete">
       {{ todo.details }}
       <i class="fa fa-trash fa-lg float-right ml-3" (click)="deleteTodo(todo)"></i>
-      <input class="float-right" type="checkbox" (click)="toggleTodo(todo)">
+      <input class="float-right mr-2 mt-1" type="checkbox" (click)="toggleTodo(todo)">
     </li>
   </ul>
 </div>
