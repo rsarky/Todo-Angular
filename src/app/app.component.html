@@ -8,7 +8,7 @@
   </div>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let todo of todoStore.todos" [ngStyle]="{'text-decoration': todo.isComplete ? 'line-through' : 'none'}"
-      [class.list-group-item-success]="todo.isComplete">
+      [class.list-group-item-success]="todo.isComplete" (dblclick)="editTodo(todo)">
       {{ todo.details }}
       <i class="fa fa-trash fa-lg float-right ml-3" (click)="deleteTodo(todo)" mdbTooltip="Remove Todo" placement="right"></i>
       <input class="float-right mr-2 mt-1" type="checkbox" (click)="toggleTodo(todo)" [checked]="todo.isComplete">

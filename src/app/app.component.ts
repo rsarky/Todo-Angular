@@ -33,4 +33,9 @@ export class AppComponent {
   removeCompleted() {
     this.todoStore.removeCompleted();
   }
+
+  editTodo(todo) {
+    this.details = todo.details;
+    this.deleteTodo(todo);
+  }
 }
