@@ -33,4 +33,11 @@ export class LocalStorageService {
     this.todos.splice(this.todos.indexOf(todo), 1);
     this.updateStore();
   }
+
+  removeCompleted() {
+    this.todos = this.todos.filter( (todo) => {
+      return !todo.isComplete;
+    });
+    this.updateStore();
+  }
 }
