@@ -5,6 +5,9 @@
   <div class="md-form">
     <input mdbInputDirective type="text" id="todo" class="form-control" [mdbValidate]="false" [(ngModel)]="details" (keyup.enter)="addTodo()">
     <label for="todo">What do you want to do?</label>
+    <small class="form-text text-muted" [hidden]="!showHelpText">
+      Doing nothing is not allowed!
+    </small>
   </div>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let todo of todoStore.todos" [ngStyle]="{'text-decoration': todo.isComplete ? 'line-through' : 'none'}"

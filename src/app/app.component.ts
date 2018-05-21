@@ -11,12 +11,19 @@ export class AppComponent {
   details: string;
   todo: Todo;
   todoStore: LocalStorageService;
+  showHelpText:boolean;
 
   constructor(todoStore: LocalStorageService) {
     this.todoStore = todoStore;
+    this.showHelpText = false;
   }
 
   addTodo() {
+    if (!this.details) {
+      this.showHelpText = true;
+      return;
+    }
+    this.showHelpText = false;
     let newTodo = new Todo(this.details);
     this.todoStore.addTodo(newTodo);
     this.details = "";

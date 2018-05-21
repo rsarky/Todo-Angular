@@ -7,3 +7,8 @@ input[type=checkbox]
   -o-transform: scale(1.5); /* Opera */
   padding: 10px;
 }
+
+small {
+  color: red !important;
+  margin-bottom: 5px;
+}

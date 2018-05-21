@@ -1,0 +1,22 @@
+---Ideas---
+
+>Edit todos DONE
+
+>Remove completed todos DONE (But need to understand how this got done.)
+
+>Add input validation so that cannot enter empty string
+
+>Add support for categories? or something like labels (inspiration from google keep.)
+
+>Sync across multiple devices? So some kind of login and then I will need a backend too.?
+
+>Move checked items to the bottom of the list?
+
+>Priorities?
+
+>Make it more aesthetic?
+
+
+Thoughts.
+
+How the fuck does my code work referring to 'Remove Completed' drama.
