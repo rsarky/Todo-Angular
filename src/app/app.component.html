@@ -11,7 +11,7 @@
       [class.list-group-item-success]="todo.isComplete">
       {{ todo.details }}
       <i class="fa fa-trash fa-lg float-right ml-3" (click)="deleteTodo(todo)"  mdbTooltip="Remove Todo" placement="right"></i>
-      <input class="float-right mr-2 mt-1" type="checkbox" (click)="toggleTodo(todo)">
+      <input class="float-right mr-2 mt-1" type="checkbox" (click)="toggleTodo(todo)" [checked]="todo.isComplete">
     </li>
   </ul>
   <div class="mt-3"><a href="#" (click)="removeCompleted()">Remove Completed</a></div>
